@@ -1,2 +1,0 @@
-# LearnNotes
-LearnNotes, Concepts
