@@ -4,8 +4,19 @@ git init
 
 //增加所有文件到版本库
 git add .
+
 //提交本地修改
-git commit -m ‘initial commit’
+git commit -m 'initial commit'
+
 //创建密钥对
 ssh-keygen -t rsa -C “youremail@example.com”
+
+//把公钥放到github网站上，新建一个仓库
+
+//将本地仓库和远程仓库进行关联
+git remote add origin git@github.com:orca123456/LearnNotes.git
+
+//把本地文件上传到git上(第一次上传需要-u)
+git push -u origin master
+
 
