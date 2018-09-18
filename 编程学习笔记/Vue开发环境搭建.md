@@ -18,6 +18,8 @@ cnpm i vue --save
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
 
 # 安装vue-cli
+//安装
 npm install -g vue-cli
+//初始化项目
 vue init webpack-simple projectname
 vue init webpack projectname2
