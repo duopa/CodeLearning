@@ -23,3 +23,5 @@ npm install -g vue-cli
 //初始化项目
 vue init webpack-simple projectname
 vue init webpack projectname2
+//安装项目依赖插件
+cnpm install
