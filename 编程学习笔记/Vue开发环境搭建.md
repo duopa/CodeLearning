@@ -25,3 +25,5 @@ vue init webpack-simple projectname
 vue init webpack projectname2
 //安装项目依赖插件
 cnpm install
+//打开开发模式
+cnpm run dev
