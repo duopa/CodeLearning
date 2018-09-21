@@ -208,16 +208,11 @@ contract FoMo3Dlong is modularLong {
 //****************
 // PLAYER DATA 
 //****************
-    mapping (address => uint256) public pIDxAddr_;          
-    // (addr => pID) returns player id by address
-    mapping (bytes32 => uint256) public pIDxName_;          
-    // (name => pID) returns player id by name
-    mapping (uint256 => F3Ddatasets.Player) public plyr_;   
-    // (pID => data) player data
-    mapping (uint256 => mapping (uint256 => F3Ddatasets.PlayerRounds)) public plyrRnds_;    
-    // (pID => rID => data) player round data by player id & round id
-    mapping (uint256 => mapping (bytes32 => bool)) public plyrNames_; 
-    // (pID => name => bool) list of names a player owns.  (used so you can change your display name amongst any name you own)
+    mapping (address => uint256) public pIDxAddr_;          // (addr => pID) returns player id by address
+    mapping (bytes32 => uint256) public pIDxName_;          // (name => pID) returns player id by name
+    mapping (uint256 => F3Ddatasets.Player) public plyr_;   // (pID => data) player data
+    mapping (uint256 => mapping (uint256 => F3Ddatasets.PlayerRounds)) public plyrRnds_;    // (pID => rID => data) player round data by player id & round id
+    mapping (uint256 => mapping (bytes32 => bool)) public plyrNames_; // (pID => name => bool) list of names a player owns.  (used so you can change your display name amongst any name you own)
 //****************
 // ROUND DATA 
 //****************
