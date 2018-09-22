@@ -21,8 +21,20 @@ func main(){
 		fmt.Println(c)
 	}
 
-	for i:=0; b:=range(d){
-
+	for i:=0; ;i++ {
+		fmt.Println(i)
 	}
+
+	for i,j:=range(d){
+		fmt.Println(i,j)
+	}
+
+	//i=0
+	//while (true){
+	//	i++
+	//	fmt.Println(i)
+	//}
+
+
 }
 
