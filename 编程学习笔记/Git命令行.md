@@ -53,3 +53,7 @@ git commit -m ‘update .gitignore’
 Git add .
 git commit -m ‘Add title’
 git push origin master
+
+# 其他命令
+//查询git配置
+git config --list
