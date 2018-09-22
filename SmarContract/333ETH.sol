@@ -246,6 +246,7 @@ contract Accessibility {
   mapping(address => AccessRank) internal m_admins;
   modifier onlyAdmin(AccessRank  r) {
     require(
+      //权限是r或者权限是Full的时候
       m_admins[msg.sender] == r || m_admins[msg.sender] == AccessRank.Full,
       "access denied"
     );
