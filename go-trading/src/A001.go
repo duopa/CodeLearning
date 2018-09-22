@@ -15,5 +15,14 @@ func main(){
 	fmt.Println(b)
 	fmt.Println(c)
 	fmt.Println(d)
+
+	for i:=0; i<10; i++ {
+		c=append(c,i)
+		fmt.Println(c)
+	}
+
+	for i:=0; b:=range(d){
+
+	}
 }
 
