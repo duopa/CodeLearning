@@ -1,3 +1,8 @@
+# 下载地址
+Msysgit https://git-scm.com/download.win
+
+
+
 # 把本地文佳佳放入远程库
 //初始化
 git init
@@ -57,3 +62,82 @@ git push origin master
 # 其他命令
 //查询git配置
 git config --list
+
+#配置用户信息
+git config --global user.name "tyler"
+git config --global user.email "tyler@163.com"
+
+# git工作流
+//清理当前工作目录
+clear
+//查看目录
+ll
+//查看当前状态
+git status
+//添加到暂存区
+git add .
+//添加到本地仓库
+git commit -m "commit notes"
+//从暂存区回归到工作区
+git reset HEAD bash_demo.txt
+//回退工作区的文件的更改内容
+git checkout -- bash_demo.txt
+//查询日志
+git log
+//复制上一次的commit号，进行回滚，包括最终仓库和暂存区文件
+git reset --hard dfadf8708a7d0f89a6s0df8adf97a60df8a6d09
+//清除工作区文件
+git rm bash_demo.txt
+//清楚暂存区和仓库去
+git commit -m "delete bash demo"
+
+# 远程仓库
+//创建密钥对
+ssh-keygen -t rsa -C “youremail@example.com”
+//查看本地仓库和github是否连通
+ssh -T git@github.com
+//新建README文档（>>表示追加）
+echo “# tyler_muke” >> README.md
+git init
+//添加到暂存仓库
+git add README.md
+git commit -m "first commit"
+//把本地仓库和远程仓库关联起来（需要先在github上新建仓库）
+git remote add origin git@github.com:tylerdemo/tyler_muke.git
+//-u是把本地master与远程master关联起来
+git push -u origin master
+git pull origin master --allow-unrelated-histories
+
+# 标签管理
+//列出当前所有标签
+git tag
+//基于当前分支当前commitID创建标签
+git tag v1.0.1
+//添加信息
+git tag -a name -m "comment"
+//删除标签
+git tag -d name
+//推送到仓库
+git push origin v1.0.1
+
+# 分支管理
+//创建分支
+git branch branch_name
+//查看分支
+git branch
+//切换分支
+git checkout branch_name
+//先切换到master分支，再合并到master分支
+git checkout master
+git merge branch_name
+//删除分支
+git branch -d branchName
+
+
+
+
+
+
+
+
+
