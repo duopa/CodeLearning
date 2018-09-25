@@ -15,10 +15,17 @@ python manage.py runserver 9999
 # 创建APP
 python manage.py startapp blog
 
-
+# 通过models生成数据库表
 //生成SQL语句
 python manage.py makemigrations
 python manage.py migrate
 //查看SQL语句
 python manage.py sqlmigrate appname fileid
+
+# Admin
+//创建超级用户
+python manage.py createsuperuser
+
+
+
 
