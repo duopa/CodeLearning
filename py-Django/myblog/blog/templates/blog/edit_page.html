@@ -9,10 +9,17 @@
     <script src="main.js"></script>
 </head>
 <body>
-<h1>{{article.title}}</h1>
-<br>
-<h3>{{article.content}}</h3>
-<br><br>
-<a href="">修改文章</a>
+<form action="{% url 'blog:edit_action'%}">
+    {% csrf_token %}
+    <label for="">文章标题<br>
+        <input type="text" name="title"/>
+    </label>
+    <br>
+    <label for="">文章内容<br>
+        <input type="text" name="content"/>
+    </label>
+    <br>
+    <input type="submit" value="提交">
+</form>
 </body>
 </html>
