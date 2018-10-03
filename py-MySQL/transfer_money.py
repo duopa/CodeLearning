@@ -24,7 +24,7 @@ class TransferMoney:
         cursor = self.conn.cursor()
         try:
             cursor=self.conn.cursor()
-            sql="select * from account where acctid=%s and money>%s" % (acctid,money)
+            sql="select * from account where acctid=%s and money>=%s" % (acctid,money)
             cursor.execute(sql)
             print("has_enough_money:"+sql)
             rs = cursor.fetchall()
@@ -60,13 +60,13 @@ class TransferMoney:
     def transfer(self, source_acctid,target_acctid,money):
         try:
             self.check_acct_available(source_acctid)
-            # self.check_acct_available(target_acctid)
+            self.check_acct_available(target_acctid)
             self.has_enough_money(source_acctid,money)
             self.reduce_money(source_acctid,money)
             self.add_maoney(target_acctid,money)
             self.conn.commit()
         except Exception as e:
-            # self.conn.rollback()
+            self.conn.rollback()
             raise e
 
 
