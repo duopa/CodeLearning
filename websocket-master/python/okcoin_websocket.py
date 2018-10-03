@@ -8,13 +8,13 @@ import base64
 
 api_key=''
 secret_key = ""
-#business 
+#business 生成签名
 def buildMySign(params,secretKey):
     sign = ''
     for key in sorted(params.keys()):
         sign += key + '=' + str(params[key]) +'&'
     return  hashlib.md5((sign+'secret_key='+secretKey).encode("utf-8")).hexdigest().upper()
-#spot trade
+#spot trade 现货交易
 def spotTrade(channel,api_key,secretkey,symbol,tradeType,price='',amount=''):
     params={
       'api_key':api_key,
@@ -35,7 +35,7 @@ def spotTrade(channel,api_key,secretkey,symbol,tradeType,price='',amount=''):
     finalStr+="},'binary':'true'}"
     return finalStr
 
-#spot cancel order
+#spot cancel order 取消现货订单
 def spotCancelOrder(channel,api_key,secretkey,symbol,orderId):
     params = {
       'api_key':api_key,
@@ -51,7 +51,7 @@ def realtrades(channel,api_key,secretkey):
    sign=buildMySign(params,secretkey)
    return "{'event':'addChannel','channel':'"+channel+"','parameters':{'api_key':'"+api_key+"','sign':'"+sign+"'},'binary':'true'}"
 
-# trade for future
+# trade for future 期货交易
 def futureTrade(api_key,secretkey,symbol,contractType,price='',amount='',tradeType='',matchPrice='',leverRate=''):
     params = {
       'api_key':api_key,
@@ -72,7 +72,7 @@ def futureTrade(api_key,secretkey,symbol,contractType,price='',amount='',tradeTy
     finalStr += ",'amount':'"+amount+"','type':'"+tradeType+"','match_price':'"+matchPrice+"','lever_rate':'"+leverRate+"'},'binary':'true'}"
     return finalStr
 
-#future trade cancel
+#future trade cancel 取消期货交易订单
 def futureCancelOrder(api_key,secretkey,symbol,orderId,contractType):
     params = {
       'api_key':api_key,
