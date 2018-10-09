@@ -19,3 +19,6 @@ def edit_action(request):
     content = request.POST.get('content','CONTENT')
     models.Article.objects.create(title=title,content=content)
     return render(request,'blog/index.html',{'articles':articles})
+
+def hello(request):
+    return render(request,'blog/hello.py')
